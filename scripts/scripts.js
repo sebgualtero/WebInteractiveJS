@@ -14,6 +14,12 @@ You are encouraged to use the provided naming convention for ease of review.
 let modelName = document.getElementById("model-text").innerHTML;
 let duration = document.getElementById("duration-text").innerHTML;
 
+let modelText = document.getElementById("model-text");
+console.log(modelText);
+console.log(modelName);
+
+console.log("XYZ" === modelName);
+
 /****************** helper function ******************/
 /* create a function called recalculate() which will
     - create a variable to represent the calculated-cost span element. That will look something like:
@@ -29,7 +35,7 @@ let duration = document.getElementById("duration-text").innerHTML;
 let costLabel = document.getElementById("calculated-cost");
 
 function recalculate() {
-    if (modelName === "XYZ") {
+    if (modelName === "Model XYZ") {
         costLabel.innerHTML = duration * 100;
     } else {
         costLabel.innerHTML = duration * 213;
@@ -56,11 +62,12 @@ let modelButton = document.getElementById("model-button");
 
 function changeModel() {
     let modelText = document.getElementById("model-text");
-    if (modelName === "XYZ") {
-        modelName = "CPRG";
+    if (modelName === "Model XYZ") {
+        modelName = "Model CPRG";
         modelText.innerHTML = "Model CPRG";
-    } else {
-        modelName = "XYZ";
+    } 
+    else {
+        modelName = "Model XYZ";
         modelText.innerHTML = "Model XYZ";
     }
     recalculate();
